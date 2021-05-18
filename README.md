@@ -1,5 +1,3 @@
-# Abitrolly Tap
-
 ## How do I install these formulae?
 
 `brew install abitrolly/tap/<formula>`
