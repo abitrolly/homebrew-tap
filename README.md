@@ -1,9 +1,16 @@
-## How do I install these formulae?
+### How I install these formulae?
 
-`brew install abitrolly/tap/<formula>`
+```
+brew tap abitrolly/tap
+brew install <formula>
+```
+Or.
+```
+brew install abitrolly/tap/<formula>
+```
+See `brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
 
-Or `brew tap abitrolly/tap` and then `brew install <formula>`.
 
-## Documentation
+### Provided
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+* `tdu` - Top Disk Usage (https://github.com/josephpaul0/tdu)
