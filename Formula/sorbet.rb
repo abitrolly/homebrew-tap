@@ -5,6 +5,12 @@ class Sorbet < Formula
   sha256 "ef751bd209c2bc9a35d91e1d4b391489ab8a51e9319e2113bcc0eace1cd0cf7b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/abitrolly/homebrew-tap/releases/download/sorbet-0.5.10439.20220916051958-58983475"
+    sha256 cellar: :any_skip_relocation, big_sur:      "5e7ce8606ba7e23ffd214148f77b05fcd2175a0370ad57fe675f2019a022e9cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b84c9f6298b839f1470d099ecaa2052f4f04530849c62420256eba6d966f4e5c"
+  end
+
   depends_on "autoconf" => :build
   depends_on "bazelisk" => :build
   depends_on "parallel" => :build
