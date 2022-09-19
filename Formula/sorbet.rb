@@ -5,7 +5,7 @@ class Sorbet < Formula
   sha256 "ef751bd209c2bc9a35d91e1d4b391489ab8a51e9319e2113bcc0eace1cd0cf7b"
   license "Apache-2.0"
 
-  depends_on "autotools" => :build
+  depends_on "autoconf" => :build
   depends_on "bazel" => :build
 
   uses_from_macos "ruby"
