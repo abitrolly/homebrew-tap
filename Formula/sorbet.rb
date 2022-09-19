@@ -9,16 +9,13 @@ class Sorbet < Formula
   depends_on "bazelisk" => :build
   depends_on "parallel" => :build
 
-  uses_from_macos "ruby"
+  #uses_from_macos "ruby"
 
   def install
     # https://github.com/sorbet/sorbet#building-sorbet
     system "./bazel", "build", "//main:sorbet", "--config=release-#{OS.mac? ? "mac" : "linux"}"
 
-    ENV["GEM_HOME"] = libexec
-    system "gem", "install", "#{name}-#{version}.gem"
-    bin.install libexec/"bin/#{name}"
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install "bazel-bin/main/sorbet"
   end
 
   test do
@@ -31,6 +28,6 @@ class Sorbet < Formula
     #
     # The installed folder is not in the path, so use the entire path to any
     # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    system "sorbet", "--version"
   end
 end
