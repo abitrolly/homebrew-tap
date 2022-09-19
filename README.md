@@ -64,6 +64,9 @@ brew install abitrolly/tap/<formula>
 </details>
 
 
+##### `sorbet` - Ruby type checker (https://github.com/sorbet/sorbet)
+
+
 ### More info
 
 `brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
