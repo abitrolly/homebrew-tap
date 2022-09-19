@@ -6,7 +6,8 @@ class Sorbet < Formula
   license "Apache-2.0"
 
   depends_on "autoconf" => :build
-  depends_on "bazel" => :build
+  depends_on "bazelisk" => :build
+  depends_on "parallel" => :build
 
   uses_from_macos "ruby"
 
@@ -15,7 +16,6 @@ class Sorbet < Formula
     system "./bazel", "build", "//main:sorbet", "--config=release-#{OS.mac? ? "mac" : "linux"}"
 
     ENV["GEM_HOME"] = libexec
-    system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
     bin.install libexec/"bin/#{name}"
     bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
