@@ -9,8 +9,6 @@ class Sorbet < Formula
   depends_on "bazelisk" => :build
   depends_on "parallel" => :build
 
-  #uses_from_macos "ruby"
-
   def install
     # https://github.com/sorbet/sorbet#building-sorbet
     system "./bazel", "build", "//main:sorbet", "--config=release-#{OS.mac? ? "mac" : "linux"}"
