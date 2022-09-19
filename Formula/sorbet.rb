@@ -7,6 +7,9 @@ class Sorbet < Formula
 
   uses_from_macos "ruby"
 
+  depends_on "autotools" => :build
+  depends_on "bazel" => :build
+
   def install
     # https://github.com/sorbet/sorbet#building-sorbet
     system "./bazel", "build", "//main:sorbet", "--config=release-#{OS.mac? ? "mac" : "linux"}"
