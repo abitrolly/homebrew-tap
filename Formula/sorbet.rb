@@ -8,6 +8,9 @@ class Sorbet < Formula
   uses_from_macos "ruby"
 
   def install
+    # https://github.com/sorbet/sorbet#building-sorbet
+    system "./bazel", "build", "//main:sorbet", "--config=release-#{OS.mac? ? 'mac' : 'linux'}"
+
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
