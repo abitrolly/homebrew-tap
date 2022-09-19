@@ -9,7 +9,7 @@ class Sorbet < Formula
 
   def install
     # https://github.com/sorbet/sorbet#building-sorbet
-    system "./bazel", "build", "//main:sorbet", "--config=release-#{OS.mac? ? 'mac' : 'linux'}"
+    system "./bazel", "build", "//main:sorbet", "--config=release-#{OS.mac? ? "mac" : "linux"}"
 
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "#{name}.gemspec"
